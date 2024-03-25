@@ -18,7 +18,7 @@ pipeline {
         }            
         stage ('Pakage') {
             steps{
-                echo 'Run the Paakge Code'
+                echo 'Run the Paakge Code in env:${params.Env}'
             }
         }            
     }
