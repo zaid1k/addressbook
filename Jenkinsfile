@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage ('Compile') {
             steps{
-                echo 'Compile the Code'
+                echo "Compile the Code ${params.APPVERSION}"
             }
         }            
         stage ('UnitTest') {
