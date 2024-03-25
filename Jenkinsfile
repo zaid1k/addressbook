@@ -41,4 +41,3 @@ pipeline {
                 echo "Deploying the app in env:${params.Env}"
             }            
     }
-}
