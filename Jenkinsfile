@@ -37,10 +37,10 @@ pipeline {
             booleanParam(name: 'DeployToProd', defaultValue: false, description: 'Decide to deploy on prod env')
         }
     }
-            steps{
-                echo "Deploying the app in env:${params.Env}"
-            }            
-    }
+            steps {
+    echo "Deploying the app in env: ${params.Env}"
+}
+        
     }
     }
 }
