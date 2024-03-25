@@ -25,21 +25,22 @@ pipeline {
         }            
         stage ('Pakage') {
             steps{
-                echo "Run the Paakge Code in env:${params.Env}"
+           input{
+                  echo "Run the Paakge Code in env:${params.Env}"
             }
         }
-        stage ('Deploy') {
-            input{
-                message: "Provide approval for PROD"
-                ok "Deploy to PROD"
-                parameters{
-                    booleanParam(name: 'DeployToProd', defaultValue: false, description: 'Decide to deploy on prod env')
 
-                }
-            }
+        stage ('Deploy') {
+    input {
+        message "Provide approval for PROD"
+        ok "Deploy to PROD"
+        parameters {
+            booleanParam(name: 'DeployToProd', defaultValue: false, description: 'Decide to deploy on prod env')
+        }
+    }
             steps{
                 echo "Deploying the app in env:${params.Env}"
             }            
     }
     }
-    
+    }
