@@ -1,10 +1,11 @@
 pipeline {
     agent any
 
-    parameters{
-        string(name:'Env',defaultValue: 'Test',description:'Env to deploy')
-        booleanParam(name:'executeTests',defaultValue:True,description:'decide to run test case')
-    }
+    parameters {
+    string(name: 'Env', defaultValue: 'Test', description: 'Env to deploy')
+    booleanParam(name: 'executeTests', defaultValue: true, description: 'Decide whether to run test cases')
+}
+
 
     stages {
         stage ('Compile') {
