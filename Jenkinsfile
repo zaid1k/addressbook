@@ -6,12 +6,22 @@ pipeline {
         maven 'mymaven'
     }
 
+    
     stages {
-        When{
-            expression{
-                BRANCH_NAME == 'dev'
+        stage('Check Branch') {
+            when {
+                expression {
+                    BRANCH_NAME == 'dev'
+                }
+            }
+            steps {
+                // Steps to execute if the condition is true
             }
         }
+        // Define additional stages here
+    }
+
+
         stage ('Compile') {
             agent any
             steps{
