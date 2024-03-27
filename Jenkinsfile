@@ -1,19 +1,26 @@
 pipeline {
-    agent any
+    agent none
 
     tools{
-        jdk 'myjava'
+        //jdk 'myjava'
         maven 'mymaven'
     }
 
     stages {
+        When{
+            expression{
+                BRANCH_NAME == 'dev'
+            }
+        }
         stage ('Compile') {
+            agent any
             steps{
                 echo "Compile the Code"
                 sh 'mvn compile'
             }
         }            
         stage ('UnitTest') {
+            agent any
             steps{
                 echo 'Run the test Code'
                 sh 'mvn test'
@@ -25,6 +32,7 @@ pipeline {
             }
         }            
         stage ('Pakage') {
+            agent {label 'linux_slave'}
             steps{
                   echo "Run the Paakge Code"
                   sh 'mvn package'
