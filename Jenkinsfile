@@ -9,7 +9,7 @@ pipeline {
     stages {
         When{
             expression{
-                BRANCH_NAME == 'dev'
+                BRANCH_NAME == 'devops'
             }
         }
         stage ('Compile') {
