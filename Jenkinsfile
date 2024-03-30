@@ -6,13 +6,7 @@ pipeline {
         maven 'mymaven'
     }
 
-    stages {
-        When{
-            expression{
-                BRANCH_NAME == 'dev'
-            }
-        }
-
+    stages {    
         stage ('Compile') {
             agent any
             steps{
