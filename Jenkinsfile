@@ -6,10 +6,11 @@ pipeline {
         maven 'mymaven'
     }
 
-    environmnet {
-        IMAGE_NAME='zaid786/java-mvn-privaterepos:$BUILD_NUMBER'
-        BUILD_SERVER_IP='ec2-user@192.168.2.24'
-    }
+    environment {
+    IMAGE_NAME = "zaid786/java-mvn-privaterepos:$BUILD_NUMBER"
+    BUILD_SERVER_IP = "ec2-user@192.168.2.24"
+}
+
 
     stages {    
         stage ('Compile') {
