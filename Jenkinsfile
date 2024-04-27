@@ -7,7 +7,7 @@ pipeline {
     }
 
     environment{
-        BUILD_SERVER='ec2-user@172.31.0.234'
+        BUILD_SERVER='ec2-user@192.168.2.24'
     }
 
     stages {
